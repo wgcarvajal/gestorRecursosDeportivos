@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <body>
+
+        <ui:composition template="./../../plantillas/frontEndAdministrador.xhtml">
+
+            <ui:define name="titulo">
+                Gestion Centros Deportivos
+            </ui:define>
+            <ui:define name="title">
+                
+            </ui:define>
+            <ui:define name="body">
+                <h:form>
+                    <p:breadCrumb>
+                        <p:menuitem value="Inicio" outcome="/index"/>                              
+                        <p:menuitem value="Gestón Centros Deportivos" outcome="gestionCentrosDeportivos" />                                        
+                    </p:breadCrumb>
+                </h:form>
+                <div class="tituloContenido">Gestión Centros Deportivos</div>
+                <p:growl autoUpdate="true"/>
+                <h:form id="formularioEspaciosEscenarios">
+                    <p:commandButton value="Crear centro deportivo" 
+                                     style="background: #22419A;color:#FFFFFF;font-style: italic;font-weight: normal;"
+                                     actionListener="#{crearEspacioEscenariosController.abrirVentanaCrearEspacioEscenarios()}"/>
+                    <br/>
+                    <p:dataTable value="#{listarEspaciosEscenariosController.listaEspacioEscenarios}" var="espacioEscenarios">
+                        
+                            <p:column headerText="Nombre">
+                                #{espacioEscenarios.espnombre}
+                            </p:column>
+                            <p:column headerText="Acciones">
+                                <p:commandLink value="ver" action="#{estadoSeleccionController.seleccionarEspacioEscenarios(espacioEscenarios.espid)}"/>
+
+                            </p:column>
+                        
+                    </p:dataTable>
+                </h:form>
+                
+                <ui:include src="ventanaCrearCentroDeportivo.xhtml"/>
+                <ui:include src="/ventanaEfectodeCarga.xhtml"/>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

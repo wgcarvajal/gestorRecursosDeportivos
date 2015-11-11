@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    
+    <body>
+        
+        <ui:composition template="./../../plantillas/frontEndUsuarioconysinSesion.xhtml">
+
+            <ui:define name="titulo">
+                Centro Deportivo
+            </ui:define>
+            
+            <ui:define name="title">
+                 
+            </ui:define>                   
+
+            <ui:define name="body">
+                 <h:form id="formCentroDeportivoCSS">
+                    <style type="text/css">
+                        <ui:repeat value="#{mostrarEscenariosController.generarListaEscenarios(estadoSeleccionController.idEspacioEscenarioSeleccionado)}" var="escenario">
+                                .escenario#{escenario.escid}{
+                                        position:absolute;
+                                        background: url(../../resources/img/escenarios/#{escenario.escnombreimagenanimada}) no-repeat ;
+                                        background-size: #{escenario.escanchoimagen}px;
+                                        top: #{escenario.escmargensuperior}px;
+                                        left: #{escenario.escmargenizquierda}px;
+                                        width: #{escenario.escanchoimagen}px;
+                                        height: #{escenario.esclargoimagen}px;
+                                        transform: rotate(#{escenario.escrotarimagen}deg);
+                                        -moz-transform: rotate(#{escenario.escrotarimagen}deg);
+                                        -o-transform: rotate(#{escenario.escrotarimagen}deg);
+                                        -webkit-transform: rotate(#{escenario.escrotarimagen}deg);
+                                    }
+
+                                    .escenario#{escenario.escid}:hover{
+                                    transform: rotate(#{escenario.escrotarimagen}deg) scale(1.5);
+                                    -moz-transform: rotate(#{escenario.escrotarimagen}deg) scale(1.5);
+                                    -o-transform: rotate(#{escenario.escrotarimagen}deg) scale(1.5);
+                                    -webkit-transform: rotate(#{escenario.escrotarimagen}deg) scale(1.5);
+                                    }
+                        </ui:repeat>
+                    </style>
+                </h:form>
+                <h:form>
+                    <p:breadCrumb>
+                        <p:menuitem value="Inicio" outcome="/index" />
+                        <p:menuitem value="Centros Deportivos" outcome="centrosDeportivos" />      
+                        <p:menuitem value="Centro Deportivo" outcome="centroDeportivo" />                                        
+                    </p:breadCrumb>
+                </h:form>
+
+                <div class="tituloContenido">#{mostrarEscenariosController.espacioEscenarioSeleccionado.espnombre}</div> 
+                <h:form id="formCentroDeportivo"> 
+                    <p:growl autoUpdate="true"/>
+                    <div style="position:relative;min-height: #{mostrarEscenariosController.espacioEscenarioSeleccionado.espancho}px;background-color: #{mostrarEscenariosController.espacioEscenarioSeleccionado.espcolor};">
+                        <ui:repeat value="#{mostrarEscenariosController.listaEscenarios}" var="escenario">
+                            <p:commandLink actionListener="#{mostrarInfoReserEventClasesEscenario.seleccionarEscenario(escenario,reservasEscenariosController)}"  >
+                                <div  class="escenario#{escenario.escid}" title="#{escenario.escnombre}"/>
+                            </p:commandLink>                     
+                        </ui:repeat>                        
+                    </div>
+                </h:form>
+                <ui:include src="ventanaInformacionReservasEscenario.xhtml"/>
+                <ui:include src="/ventanaEfectodeCarga.xhtml"/>
+            </ui:define>
+        </ui:composition>
+
+    </body>
+</html>

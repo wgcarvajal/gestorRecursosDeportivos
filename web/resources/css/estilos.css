@@ -1,0 +1,776 @@
+/***** Fuentes *****/
+@font-face {
+    font-family: 'Vegur-Regular';
+    src: url('../fonts/vegur/vegur-regular-webfont.eot');
+    src: url('../fonts/vegur/vegur-regular-webfont.eot?iefix') format('eot'),
+        url('../fonts/vegur/vegur-regular-webfont.woff') format('woff'),
+        url('../fonts/vegur/vegur-regular-webfont.ttf') format('truetype'),
+        url('../fonts/vegur/vegur-regular-webfont.svg#webfontZam02nTh') format('svg');
+    font-weight: normal;
+    font-style: normal; 
+}
+
+
+body {
+    background: url(../img/body-bkg.png) repeat-x scroll 0% 0% #C8CDD6;
+    font-family: "Vegur-Regular", "Arial Narrow", Arial, sans-serif;
+    line-height: 1;
+    font-size: 12px;    
+}
+
+/***** Main Header ******/
+#mainHeader 
+{
+
+}
+#mainHeader .contenedor {
+    width: 972px;
+    margin: auto;
+    background-color: #092169;
+    padding: 35px 0 0px;
+}
+#mainHeader .top {
+    background-color: #22419A;
+    position: relative;
+}
+#mainHeader .top .borde-redondo {
+    position: absolute;
+    width: 125px;
+    height: 125px;
+    border-radius: 60px;
+    background-color: #22419A;
+    top: -15px;
+}
+#mainHeader .top .titulo:link, #mainHeader .top .titulo:visited {
+    text-transform: capitalize;
+    float: left;
+    margin: 25px 25px 0 50px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-decoration: none;
+    text-shadow: 0 0 50px #000000;
+}
+#mainHeader .top .logo {
+    position: relative;
+    z-index: 1;
+    margin-left: 23px;
+    padding-top: 2px;
+    float: left;
+}
+#mainHeader .top .logo a {
+    width: 192px;
+    height: 96px;
+    display: block;
+    background: url(../img/logo-unicauca.png) no-repeat;
+}
+#mainHeader .bottom {
+    height: 40px;
+    background: url(../img/bkg-cabecera-rojo.png) repeat-y;
+}
+
+/***** Main Navigation *****/
+#mainNav {
+    margin-top: -13px;
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+}
+#mainNav ul {
+    padding-left: 0;
+}
+#mainNav ul li {
+    float: left;
+    margin-right: 12px;
+    background: #3C3C3C;
+    position: relative;
+}
+#mainNav ul li .punta {
+    position: absolute;
+    right: -7px;
+    top: -11px;
+    width: 0;
+    height: 0;
+    border-bottom: 11px solid #092169; 
+    border-right: 8px solid transparent;    
+}
+#mainNav ul li a:link, #mainNav ul li a:visited {
+    padding:10px 10px;    
+    text-shadow: 0px 1px 0px #414141;
+    background:#092169;
+    background: -moz-linear-gradient(top, #22419A, #092169);
+    background: -webkit-linear-gradient(top, #22419A, #092169);
+    background: -o-linear-gradient(top, #22419A, #092169);
+    background: -ms-linear-gradient(top, #22419A, #092169);
+    background: linear-gradient(top #22419A, #092169);
+    -pie-background: linear-gradient(#22419A, #092169); /*IE8*/
+    -webkit-border-radius:2px;
+    -moz-border-radius:2px;
+    border-radius:2px;
+    -webkit-box-shadow: rgba(54,59,64, .75) 3px 3px 4px;
+    -moz-box-shadow: rgba(54,59,64, .75) 3px 3px 4px;
+    box-shadow: rgba(54,59,64, .75) 3px 3px 4px;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+#mainNav ul li a.active, #mainNav ul li a:hover, #mainNav ul li a:focus {
+    color:#eaeacd;
+    background:#092169;
+    -pie-background:#092169;
+    text-shadow:none;
+    -webkit-box-shadow: rgba(54,59,64, .75) 2px 2px 2px;
+    -moz-box-shadow: rgba(54,59,64, .75) 2px 2px 2px;
+    box-shadow: rgba(54,59,64, .75) 2px 2px 2px;					
+
+}
+
+/**** Contenido General *****/
+#contenido {
+    margin-top: -13px;
+}
+#contenido .contenedor {
+
+    width: 932px;
+    margin: auto;
+    border-top: 1px solid rgba(0,0,0,0.5);
+    padding: 30px 20px 10px;
+    background: url(../img/antorcha.png) no-repeat top right  #FFFFFF;
+}
+#mainMenu {
+    border-right:1px solid #999;
+    padding:10px 0px;
+    width:145px;
+    float: left;
+    margin-right: 15px;
+}
+#mainMenu li {
+    list-style: none;
+    border-bottom: 1px solid #092169;
+}
+#mainMenu li.first {
+    border-top: 1px solid #092169;	
+}
+#mainMenu a:link, #mainMenu a:visited {
+    display: block;
+    height: 47px;
+    color: #092169;
+    line-height: 47px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    -webkit-transition: all 100ms ease-in-out;
+    -moz-transition: all 100ms ease-in-out;
+    -o-transition: all 100ms ease-in-out;
+    transition: all 100ms ease-in-out;
+}
+#mainMenu a.active, #mainMenu a:hover, #mainMenu a:focus {
+    background-color: #092169;
+    color: #FFFFFF;
+}
+.breadcrumb {
+    font-size: 15px;
+}
+.breadcrumb a:link, .breadcrumb a:visited {
+    color: #092169;
+    text-decoration: none;
+}
+.breadcrumb a:hover, .breadcrumb a:focus {
+    text-decoration: underline;
+}
+
+/***** Main Footer *****/
+#mainFooter {
+
+}	
+#mainFooter .contenedor {
+    width: 972px;
+    margin: auto;
+    background: url(../img/bkg-footer.jpg) repeat-x 0% 41px; 
+    background-color: #FFFFFF;
+    padding: 0px;
+}
+#mainFooter .contenedor .separador {
+    background: url(../img/foot-bkg.gif) no-repeat;
+    width: 972px;
+    height: 75px;
+}
+#mainFooter .contenedor .pie {
+    background: url(../img/bkg-cabecera-rojo.png) repeat-y;
+    width: 972px;
+    border-top: 5px solid #092169;
+}
+#mainFooter .contenedor .pie .decoracion {
+    width: 132px;
+    height: 59px;
+}
+#mainFooter .contenedor .pie .decoracion.izq {
+    background: url(../img/fon-izq-footer-inf.gif) no-repeat;
+    float: left;
+}
+#mainFooter .contenedor .pie .decoracion.der {
+    background: url(../img/fon-der-footer-inf.gif) no-repeat;
+    float: right;
+}
+
+/***** Miscelanea *****/
+.clear {
+    clear: both;
+}
+
+.CuadroDeBotonesSesion
+{
+    position: absolute;
+    padding: 5px;
+    color: #FFFFFF;
+    text-align: center;
+    border: 1px  solid #ffffff;
+    border-style: dashed;
+    right: 20px;
+    top: 10px;
+    border-radius: 10px;    
+}
+
+.CuadroDeBotonesSesion .botonSesion
+{
+    background: #092169;
+    font-size: 15px;
+    padding: 5px 5px 5px 5px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.tituloContenido
+{
+    font-size: 25px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color:#22419A;
+    font-weight: bold;
+}
+
+.CampoLabel
+{
+    font-style: italic;
+    font-size: 16px;
+    text-align: left;
+}
+.CampoLabelEspecificacion
+{
+    font-style: italic;
+    font-size: 11px;
+}
+.CampoLabelObligatorios
+{
+    font-style: italic;
+    font-size: 15px;    
+}
+.CampoLabelEspecificacion
+{
+    font-style: italic;
+    font-size: 11px;
+}
+
+.panelgrid , .panelgrid tr , .panelgrid td
+{
+    border-style: none !important
+
+}
+.panel
+{
+    border-style: none !important
+}
+.subtitulo{
+    text-align: center;
+}
+.usuarioParticularAsistenciaCalendario{
+    float:left;
+}
+.usuarioParticularAsistenciaGrafica{
+    margin-left: 20px;
+    float:left;
+
+}
+
+.ui-carousel {
+
+    overflow: hidden;
+    padding: 7px 10px 8px;
+    border: 0;  
+}
+
+.divPrincipal
+{
+    padding: 3px 10px;
+    border-radius: 6px;
+    border: 1px solid #0B2972;
+    background: #0B2972;
+
+}
+.wrap{
+    padding: 3px 10px;
+    border-radius: 3px;
+    //border: 1px solid #0B2972;
+    //background: #006699;
+    border-color: #006699;
+    left: 50%; top: 50%;
+    margin:0 auto 0 auto;
+    width:390px; text-align:left;
+}
+
+
+.submenu 
+{
+
+
+    float:left;    
+    color: #eaeacd;
+    font-size: 12px; 
+    padding-top: 10px;
+    text-align: center;    
+    border-radius: 5px;
+    background: #F2F2F2;
+}
+.submenu h5
+{
+    color:#22419A;
+    margin:5px;
+}
+.submenu .botonSubmenu
+{
+
+    padding:5px 5px;        
+    text-shadow: 0px 1px 0px #414141;
+    background:#22419A;
+    background: -moz-linear-gradient(top, #22419A, #092169);
+    background: -webkit-linear-gradient(top, #22419A, #092169);
+    background: -o-linear-gradient(top, #22419A, #092169);
+    background: -ms-linear-gradient(top, #22419A, #092169);
+    background: linear-gradient(top #22419A, #092169);
+    -pie-background: linear-gradient(#22419A, #092169); /*IE8*/
+    -webkit-border-radius:2px;
+    -moz-border-radius:2px;
+    border-radius:2px;
+    -webkit-box-shadow: rgba(54,59,64, .75) 3px 3px 4px;
+    -moz-box-shadow: rgba(54,59,64, .75) 3px 3px 4px;
+    box-shadow: rgba(54,59,64, .75) 3px 3px 4px;        
+    text-decoration: none;
+    color: #eaeacd;
+    width: 130px;
+    height: 13px;
+    margin-left: 10px;
+    margin-bottom: 5px;
+    margin-right: 10px;
+    text-align: left;
+}
+
+.submenu .botonSubmenu:hover
+{
+
+    background:#092169;
+
+
+}
+.ui-breadcrumb .ui-icon-home 
+{
+    background-image: url("../img/home.png"); 
+    background-size: 18px 18px;
+    width: 17px;
+    background-position: 0; /* asuming bandeau.png is a single image */
+}
+
+/*------Escenario CDU----------------- */
+.escenario
+{
+    position:relative;
+    min-height: 500px;
+    background-color: #d3f07d; 
+}
+/*--------------------------------*/
+.cancha6CDU
+{
+   position:absolute;
+   background: url(../img/imagenesCdu/cancha6CDU.png) no-repeat ;
+   background-size: 169px;
+   width: 169px;
+   height: 42px;
+   top: 180px;
+   left: 30px;  
+   transform: rotate(-10deg);
+   -moz-transform: rotate(-10deg);
+   -o-transform: rotate(-10deg);
+   -webkit-transform: rotate(-10deg);
+}
+.cancha6CDU:hover
+{    
+    transform: rotate(-10deg) scale(1.5);
+    -moz-transform: rotate(-10deg) scale(1.5);
+    -o-transform: rotate(-10deg) scale(1.5);
+    -webkit-transform: rotate(-10deg) scale(1.5);
+}
+/*---------------------------------------------------------*/
+.cancha7CDU
+{
+   position:absolute;
+   background: url(../img/imagenesCdu/cancha7CDU.png) no-repeat ;
+   background-size: 169px;
+   width: 169px;
+   height: 42px;
+   top: 170px;   
+   left: 220px;
+   transform: rotate(-10deg);
+   -moz-transform: rotate(-10deg);
+   -o-transform: rotate(-10deg);
+   -webkit-transform: rotate(-10deg);
+}
+.cancha7CDU:hover
+{
+    transform: rotate(-10deg) scale(1.5);
+    -moz-transform: rotate(-10deg) scale(1.5);
+    -o-transform: rotate(-10deg) scale(1.5);
+    -webkit-transform: rotate(-10deg) scale(1.5);
+}
+/*-----------------------------------------------------*/
+.coliseoCDU
+{
+   position:absolute;
+   background: url(../img/imagenesCdu/coliseoCDU.png) no-repeat ;
+   background-size: 200px;
+   top: 90px;
+   left: 360px;
+   width: 200px;
+   height: 105px;
+   transform: rotate(-10deg);
+   -moz-transform: rotate(-10deg);
+   -o-transform: rotate(-10deg);
+   -webkit-transform: rotate(-10deg);
+}
+.coliseoCDU:hover
+{
+    transform: rotate(-10deg) scale(1.5);
+    -moz-transform: rotate(-10deg) scale(1.5);
+   -o-transform: rotate(-10deg) scale(1.5);
+   -webkit-transform: rotate(-10deg) scale(1.5);
+}
+/*----------------------------------------------------*/
+.pistaPatinajeCDU
+{
+    position:absolute;
+    background: url(../img/imagenesCdu/pistaPatinajeCDU.png) no-repeat ;
+    background-size: 200px;    
+    top: 100px;
+    left: 540px;
+    width: 200px;
+    height: 46px;
+}
+.pistaPatinajeCDU:hover
+{
+    transform:  scale(1.5);
+    -moz-transform: scale(1.5);
+   -o-transform: scale(1.5);
+   -webkit-transform: scale(1.5);
+}
+/*-------------------------------------------------------*/
+.dojoAikidoCDU
+{
+    position:absolute;
+    background: url(../img/imagenesCdu/dojoAikidoCDU.png) no-repeat ;
+    background-size: 40px;    
+    top: 70px;
+    left: 730px;
+    width: 40px;
+    height: 33px;    
+}
+.dojoAikidoCDU:hover
+{
+    transform:  scale(1.7);
+    -moz-transform: scale(1.7);
+   -o-transform: scale(1.7);
+   -webkit-transform: scale(1.7);
+}
+/*-------------------------------------------------------*/
+.dojoKarateCDU
+{
+    position:absolute;
+    background: url(../img/imagenesCdu/dojoKarateCDU.png) no-repeat ;
+    background-size: 65px;    
+    top: 95px;
+    left: 750px;
+    width: 65px;
+    height: 42px;    
+}
+.dojoKarateCDU:hover
+{
+    transform:  scale(1.7);
+    -moz-transform: scale(1.7);
+    -o-transform: scale(1.7);
+    -webkit-transform: scale(1.7);
+}
+/*-----------------------------------------------------------*/
+.cancha5CDU
+{
+    position:absolute;
+    background: url(../img/imagenesCdu/cancha5CDU.png) no-repeat ;
+    background-size: 165px;    
+    top: 270px;
+    left: 30px;
+    width: 165px;
+    height: 90px;  
+}
+.cancha5CDU:hover
+{
+    transform:  scale(1.5);
+    -moz-transform: scale(1.5);
+    -o-transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+}
+/*------------------------------------------------*/
+.cancha4CDU
+{
+    position:absolute;
+    background: url(../img/imagenesCdu/cancha4CDU.png) no-repeat ;
+    background-size: 130px;    
+    top: 275px;
+    left: 180px;
+    width: 130px;
+    height: 46px;
+    transform: rotate(-13deg);
+    -moz-transform: rotate(-13deg);
+    -o-transform: rotate(-13deg);
+    -webkit-transform: rotate(-13deg);
+}
+.cancha4CDU:hover
+{
+    transform: rotate(-13deg) scale(1.5);
+    -moz-transform: rotate(-13deg) scale(1.5);
+    -o-transform: rotate(-13deg) scale(1.5);
+    -webkit-transform: rotate(-13deg) scale(1.5);
+}
+/*-----------------------------------------------*/
+.cancha3CDU
+{
+    position:absolute;
+    background: url(../img/imagenesCdu/cancha3CDU.png) no-repeat ;
+    background-size: 169px;    
+    top: 230px;
+    left: 330px;
+    width: 169px;
+    height: 46px;
+    transform: rotate(-12deg);
+    -moz-transform: rotate(-12deg);
+    -o-transform: rotate(-12deg);
+    -webkit-transform: rotate(-12deg);
+}
+.cancha3CDU:hover
+{
+    transform: rotate(-12deg) scale(1.5);
+    -moz-transform: rotate(-12deg) scale(1.5);
+    -o-transform: rotate(-12deg) scale(1.5);
+    -webkit-transform: rotate(-12deg) scale(1.5);
+    
+}
+/*-----------------------------------------*/
+.cancha2CDU
+{
+    position:absolute;
+    background: url(../img/imagenesCdu/cancha2CDU.png) no-repeat ;
+    background-size: 95px;    
+    top: 185px;
+    left: 540px;
+    width: 95px;
+    height: 68px;
+}
+.cancha2CDU:hover
+{
+    transform: scale(1.5);
+    -moz-transform: scale(1.5);
+    -o-transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+}
+/*-----------------------------------------------*/
+.techoGradasCDU
+{
+    position:absolute;
+    background: url(../img/imagenesCdu/techoGradasCDU.png) no-repeat ;
+    background-size: 70px;    
+    top: 205px;
+    left: 602px;
+    width: 70px;
+    height: 19px;    
+    transform: rotate(76deg);
+    -moz-transform: rotate(76deg);
+    -o-transform: rotate(76deg);
+    -webkit-transform: rotate(76deg);
+}
+/*------------------------------------------*/
+.cancha1CDU
+{
+    position:absolute;
+    background: url(../img/imagenesCdu/cancha1CDU.png) no-repeat ;
+    background-size: 90px 70px;    
+    top: 175px;
+    left: 642px;
+    width: 90px;
+    height: 70px;
+    transform: rotate(-1deg);
+    -moz-transform: rotate(-1deg);
+    -o-transform: rotate(-1deg);
+    -webkit-transform: rotate(-1deg);
+}
+.cancha1CDU:hover
+{
+    transform:rotate(-1deg) scale(1.5);
+    -moz-transform: rotate(-1deg) scale(1.5);
+    -o-transform: rotate(-1deg) scale(1.5);
+    -webkit-transform: rotate(-1deg) scale(1.5);
+}
+/*-------------------------------------------------*/
+.piscinaClavadosCDU
+{
+    position:absolute;
+    background: url(../img/imagenesCdu/piscinaClavadosCDU.png) no-repeat ;
+    background-size: 65px;    
+    top: 200px;
+    left: 728px;
+    width: 65px;
+    height: 36px;
+    transform: rotate(-11deg);
+    -moz-transform: rotate(-11deg);
+    -o-transform: rotate(-11deg);
+    -webkit-transform: rotate(-11deg);
+}
+.piscinaClavadosCDU:hover
+{
+    transform: rotate(-11deg) scale(1.5);
+    -moz-transform: rotate(-11deg) scale(1.5);
+    -o-transform: rotate(-11deg) scale(1.5);
+    -webkit-transform: rotate(-11deg) scale(1.5);
+}
+/*-----------------------------------------------*/
+.piscinaCarrerasCDU
+{
+    position:absolute;
+    background: url(../img/imagenesCdu/piscinaCarrerasCDU.png) no-repeat ;
+    background-size: 130px;    
+    top: 140px;
+    left: 750px;
+    width: 130px;
+    height: 80px;
+    transform: rotate(-14deg);
+    -moz-transform: rotate(-14deg);
+    -o-transform: rotate(-14deg);
+    -webkit-transform: rotate(-14deg);
+}
+.piscinaCarrerasCDU:hover
+{
+    transform: rotate(-14deg) scale(1.5);
+    -moz-transform: rotate(-14deg) scale(1.5);
+    -o-transform: rotate(-14deg) scale(1.5);
+    -webkit-transform: rotate(-14deg) scale(1.5);
+}
+/*-------------------------------------------------*/
+.pistaAtleticaCDU
+{
+    position:absolute;
+    background: url(../img/imagenesCdu/pistaAtleticaCDU.png) no-repeat ;
+    background-size: 480px;    
+    top: 300px;
+    left: 220px;
+    width: 480px;
+    height: 135px;
+    transform: rotate(-14deg);
+    -moz-transform: rotate(-14deg);
+     -o-transform: rotate(-14deg);
+     -webkit-transform: rotate(-14deg);
+}
+.pistaAtleticaCDU:hover
+{
+    transform: rotate(-14deg) scale(1.5);
+    -moz-transform: rotate(-14deg) scale(1.5);
+     -o-transform: rotate(-14deg) scale(1.5);
+     -webkit-transform: rotate(-14deg) scale(1.5);
+}
+/*------------------------------------------------*/
+.canchaFutbolCDU
+{
+    position:absolute;
+    background: url(../img/imagenesCdu/canchaFutbolCDU.png) no-repeat ;
+    background-size: 387px;    
+    top: 316px;
+    left: 267px;
+    width: 387px;
+    height: 84px;
+    transform: rotate(-14deg);
+     -moz-transform: rotate(-14deg);
+     -o-transform: rotate(-14deg);
+     -webkit-transform: rotate(-14deg);
+}
+.canchaFutbolCDU:hover
+{
+    transform: rotate(-14deg) scale(1.5);
+    -moz-transform: rotate(-14deg) scale(1.5);
+     -o-transform: rotate(-14deg) scale(1.5);
+     -webkit-transform: rotate(-14deg) scale(1.5);
+}
+/*----------------------------------------------*/
+.oficinasCDU
+{
+    position:absolute;
+    background: url(../img/imagenesCdu/oficinasCDU.png) no-repeat ;
+    background-size: 120px;    
+    top: 205px;
+    left: 830px;
+    width: 100px;
+    height: 106px;
+}
+/*---------------------------------------------*/
+.dojoTaekwondoCDU
+{
+    position:absolute;
+    background: url(../img/imagenesCdu/dojoTaekwondoCDU.png) no-repeat ;
+    background-size: 80px;    
+    top: 262px;
+    left: 770px;
+    width: 69px;
+    height: 60px;  
+}
+.dojoTaekwondoCDU:hover
+{
+    transform:  scale(1.5);
+    -moz-transform:  scale(1.5);
+    -o-transform:  scale(1.5);
+    -webkit-transform: scale(1.5);
+}
+
+/*------------fin escenario--------------*/
+
+.parrafo
+{
+    width: 300px;
+    text-align: justify;
+    word-break: break-all;
+}
+
+.hola#d3f07d
+{
+    background-color: #d3f07d;
+}
+
+.estiloEventoReserva div
+{
+    background-color: #BCF5A9 ;
+    color: #000000;   
+}
+
+.estiloEventoMiReserva div
+{
+    background-color: bisque ;
+    color: #000000;   
+}
+
+.schedulemio tr
+{
+    height: 10px;
+}

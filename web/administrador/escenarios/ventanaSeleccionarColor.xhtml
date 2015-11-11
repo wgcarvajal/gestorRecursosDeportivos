@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"      
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+        <p:dialog modal="true" position="center" header="Seleccionar Color" widgetVar="seleccionarColor">
+                    <h:form>
+                        <p:commandLink actionListener="#{editarEspacioEscenariosController.seleccionarColorEspacioEscenarios(mostrarEscenariosController,'#d3f07d')}">
+                            <div style="width:50px;height:50px;background-color:#d3f07d;"/>
+                        </p:commandLink>
+                        <br/>
+                        <p:commandLink actionListener="#{editarEspacioEscenariosController.seleccionarColorEspacioEscenarios(mostrarEscenariosController,'#9FF781')}">
+                            <div style="width:50px;height:50px;background-color:#9FF781;"/>
+                        </p:commandLink>
+                        <br/>
+                        <p:commandLink actionListener="#{editarEspacioEscenariosController.seleccionarColorEspacioEscenarios(mostrarEscenariosController,'#BCF5A9')}">
+                            <div style="width:50px;height:50px;background-color:#BCF5A9;"/>
+                        </p:commandLink>
+                        <br/>
+                        <p:commandLink actionListener="#{editarEspacioEscenariosController.seleccionarColorEspacioEscenarios(mostrarEscenariosController,'#C2ADA0')}">
+                            <div style="width:50px;height:50px;background-color:#C2ADA0;"/>
+                        </p:commandLink>                         
+                    </h:form>
+                </p:dialog>          
+    </ui:composition>
+</html>

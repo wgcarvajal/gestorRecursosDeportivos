@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"      
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition>
+        
+        <p:dialog position="center" resizable="false"   header="Reserva" showEffect="scale" modal="true"  widgetVar="ventanaInformacionReserva">
+            <h:form id="formVentanaInformacionReserva">
+                <p:panelGrid>
+                    <p:row>
+                        <p:column>
+                            <p:outputLabel value="Fecha: "/>
+                        </p:column>
+                        <p:column>
+                            <p:outputLabel value="#{mostrarInfoReserEventClasesEscenario.fechaFormateada}"/>
+                        </p:column>
+                    </p:row>
+                    <p:row>
+                        <p:column>
+                            <p:outputLabel value="Hora: "/>
+                        </p:column>
+                        <p:column>
+                            <p:outputLabel value="#{mostrarInfoReserEventClasesEscenario.horaInicialFormateada} - #{mostrarInfoReserEventClasesEscenario.horaFinalFormateada}"/>
+                        </p:column>
+                    </p:row>
+                    <p:row>
+                        <p:column >
+                            <p:outputLabel value="Tipo: "/>
+                        </p:column>  
+                        <p:column >
+                            <p:outputLabel value="Estudiante"/>
+                        </p:column>                                               
+                    </p:row>
+                    <p:row>
+                        <p:column>
+                            <p:outputLabel value="Identificación: "/>
+                        </p:column>
+                        <p:column>
+                            <p:outputLabel value="#{mostrarInfoReserEventClasesEscenario.eventoReservaSeleccionada.usuario.usuidentificacion}"/>
+                        </p:column>                        
+                    </p:row>
+                    <p:row>
+                        <p:column>
+                            <p:outputLabel value="Nombre: "/>
+                        </p:column>
+                        <p:column>
+                            <p:outputLabel value="#{mostrarInfoReserEventClasesEscenario.eventoReservaSeleccionada.usuario.usunombres} #{mostrarInfoReserEventClasesEscenario.eventoReservaSeleccionada.usuario.usuapellidos}"/>
+                        </p:column>
+                    </p:row>
+                    <p:row>
+                        <p:column>
+                            <p:outputLabel value="Facultad: "/>
+                        </p:column>
+                        <p:column>
+                            <p:outputLabel value="#{mostrarInfoReserEventClasesEscenario.eventoReservaSeleccionada.usuario.uniid.uninombre}"/>
+                        </p:column>
+                    </p:row>
+                </p:panelGrid>
+            </h:form>             
+        </p:dialog>          
+    </ui:composition>
+    
+ </html>
+

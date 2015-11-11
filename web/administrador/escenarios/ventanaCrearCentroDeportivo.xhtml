@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"      
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+         <p:dialog position="center" resizable="false"   header="Crear centro deportivo" showEffect="scale" modal="true"  widgetVar="crearEspacioEscenarios">
+             <h:form id="formVentanaCrearEspacioEscenarios">
+                 <p:panelGrid style="text-align:left;" styleClass="panelgrid"  id="panelCrearCentroDeportivo">
+                     <p:row>
+                         <p:column>
+                             <h:outputLabel style="font-style: italic;font-size: 16px;text-align: left; color:red;" 
+                                            value="*"/>
+                             <h:outputLabel class="CampoLabelObligatorios" value=" Campos Obligatorios" />
+                         </p:column>                                
+                     </p:row>
+                     <p:row>
+                         <p:column style="text-align:right">
+                             <h:outputLabel class="CampoLabel" for="nombre" value="Nombre: " />
+                             <h:outputLabel style="font-style: italic;font-size: 16px;text-align: left; color:red;" 
+                                            value="*"/>
+                         </p:column>
+                         <p:column>
+                             <p:inputText id="nombre" value="#{crearEspacioEscenariosController.nombreNuevoEspacioEscenarios}" />                                                                          
+                         </p:column>                         
+                     </p:row>                      
+                     <p:row>
+                         <p:column>
+
+                         </p:column>
+                         <p:column>
+                             <p:commandButton   style="background: #22419A;color:#FFFFFF;font-style: italic;font-weight: normal;" 
+                                                value="Crear" ajax="true" action="#{crearEspacioEscenariosController.crearEspacioEscenarios(listarEspaciosEscenariosController)}"
+                                                id="crear" onstart="PF('efectoCarga').show()" onsuccess="PF('efectoCarga').hide()"
+                                                />
+                             <p:commandButton   style="background: #22419A;color:#FFFFFF;font-style: italic;font-weight: normal;" 
+                                                value="Cancelar" ajax="true" onclick="PF('crearEspacioEscenarios').hide()"
+                                                id="cancelar" 
+                                                />
+                         </p:column>
+                     </p:row>    
+                 </p:panelGrid>
+             </h:form>
+         </p:dialog>
+          
+    </ui:composition>
+    
+ </html>
