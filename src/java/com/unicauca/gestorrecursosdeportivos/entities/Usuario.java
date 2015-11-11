@@ -49,9 +49,8 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "Usuario.findByUsuemail", query = "SELECT u FROM Usuario u WHERE u.usuemail = :usuemail"),
     @NamedQuery(name = "Usuario.findByUsutelefono", query = "SELECT u FROM Usuario u WHERE u.usutelefono = :usutelefono"),
     @NamedQuery(name = "Usuario.findByUsufoto", query = "SELECT u FROM Usuario u WHERE u.usufoto = :usufoto")})
-public class Usuario implements Serializable {
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "usuario")
-    private List<Usuariogrupo> usuariogrupoList;
+public class Usuario implements Serializable 
+{
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -101,14 +100,18 @@ public class Usuario implements Serializable {
     @Size(max = 150)
     @Column(name = "USUFOTO")
     private String usufoto;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "usuario")
-    private List<Reserva> reservaList;
+    @OneToMany(mappedBy = "usuid")
+    private List<Curso> cursoList;
     @JoinColumn(name = "CARID", referencedColumnName = "CARID")
     @ManyToOne
     private Cargo carid;
     @JoinColumn(name = "UNIID", referencedColumnName = "UNIID")
     @ManyToOne
     private Unidadacademica uniid;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "usuario")
+    private List<Usuariogrupo> usuariogrupoList;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "usuario")
+    private List<Reserva> reservaList;
 
     public Usuario() {
     }
@@ -218,12 +221,12 @@ public class Usuario implements Serializable {
     }
 
     @XmlTransient
-    public List<Reserva> getReservaList() {
-        return reservaList;
+    public List<Curso> getCursoList() {
+        return cursoList;
     }
 
-    public void setReservaList(List<Reserva> reservaList) {
-        this.reservaList = reservaList;
+    public void setCursoList(List<Curso> cursoList) {
+        this.cursoList = cursoList;
     }
 
     public Cargo getCarid() {
@@ -240,6 +243,24 @@ public class Usuario implements Serializable {
 
     public void setUniid(Unidadacademica uniid) {
         this.uniid = uniid;
+    }
+
+    @XmlTransient
+    public List<Usuariogrupo> getUsuariogrupoList() {
+        return usuariogrupoList;
+    }
+
+    public void setUsuariogrupoList(List<Usuariogrupo> usuariogrupoList) {
+        this.usuariogrupoList = usuariogrupoList;
+    }
+
+    @XmlTransient
+    public List<Reserva> getReservaList() {
+        return reservaList;
+    }
+
+    public void setReservaList(List<Reserva> reservaList) {
+        this.reservaList = reservaList;
     }
 
     @Override
@@ -264,16 +285,7 @@ public class Usuario implements Serializable {
 
     @Override
     public String toString() {
-        return "com.unicauca.gestorrecursosdeportivos.entities.Usuario[ usuid=" + usuid + " ]";
-    }
-
-    @XmlTransient
-    public List<Usuariogrupo> getUsuariogrupoList() {
-        return usuariogrupoList;
-    }
-
-    public void setUsuariogrupoList(List<Usuariogrupo> usuariogrupoList) {
-        this.usuariogrupoList = usuariogrupoList;
+        return "com.unicauca.prueba.entities.Usuario[ usuid=" + usuid + " ]";
     }
     
 }

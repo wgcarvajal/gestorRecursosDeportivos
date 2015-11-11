@@ -47,21 +47,12 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "Escenario.findByEscmargenizquierda", query = "SELECT e FROM Escenario e WHERE e.escmargenizquierda = :escmargenizquierda"),
     @NamedQuery(name = "Escenario.findByEscrotarimagen", query = "SELECT e FROM Escenario e WHERE e.escrotarimagen = :escrotarimagen"),
     @NamedQuery(name = "Escenario.findByEscposicion", query = "SELECT e FROM Escenario e WHERE e.escposicion = :escposicion"),
+    @NamedQuery(name = "Escenario.findByEscvecesreservadia", query = "SELECT e FROM Escenario e WHERE e.escvecesreservadia = :escvecesreservadia"),
+    @NamedQuery(name = "Escenario.findByEscduracionreserva", query = "SELECT e FROM Escenario e WHERE e.escduracionreserva = :escduracionreserva"),
     @NamedQuery(name = "Escenario.findByEspid", query = "SELECT e FROM Escenario e WHERE e.espid.espid = :espid order by e.escposicion"),
     @NamedQuery(name = "Escenario.contarEscenariosPorEspid", query = "SELECT COUNT(e) FROM Escenario e WHERE e.espid.espid = :espid")})
-public class Escenario implements Serializable {
-    @Column(name = "ESCVECESRESERVADIA")
-    private Integer escvecesreservadia;
-    @JoinColumn(name = "ESCESTESCID", referencedColumnName = "ESTESCID")
-    @ManyToOne
-    private Estadoescenario escestescid;
-    @Column(name = "ESCDURACIONRESERVA")
-    private Integer escduracionreserva;
-    @JoinColumn(name = "ESCTIPOESCID", referencedColumnName = "TIPOESCID")
-    @ManyToOne
-    private Tipoescenario esctipoescid;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "escenario")
-    private List<Reserva> reservaList;
+public class Escenario implements Serializable 
+{
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -118,9 +109,23 @@ public class Escenario implements Serializable {
     @NotNull
     @Column(name = "ESCPOSICION")
     private int escposicion;
+    @Column(name = "ESCVECESRESERVADIA")
+    private Integer escvecesreservadia;
+    @Column(name = "ESCDURACIONRESERVA")
+    private Integer escduracionreserva;
     @JoinColumn(name = "ESPID", referencedColumnName = "ESPID")
     @ManyToOne(optional = false)
     private Espacioescenarios espid;
+    @JoinColumn(name = "ESCTIPOESCID", referencedColumnName = "TIPOESCID")
+    @ManyToOne(optional = false)
+    private Tipoescenario esctipoescid;
+    @JoinColumn(name = "ESCESTESCID", referencedColumnName = "ESTESCID")
+    @ManyToOne(optional = false)
+    private Estadoescenario escestescid;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "escenario")
+    private List<Reserva> reservaList;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "escenario")
+    private List<Sedictanclases> sedictanclasesList;
 
     public Escenario() {
     }
@@ -253,12 +258,62 @@ public class Escenario implements Serializable {
         this.escposicion = escposicion;
     }
 
+    public Integer getEscvecesreservadia() {
+        return escvecesreservadia;
+    }
+
+    public void setEscvecesreservadia(Integer escvecesreservadia) {
+        this.escvecesreservadia = escvecesreservadia;
+    }
+
+    public Integer getEscduracionreserva() {
+        return escduracionreserva;
+    }
+
+    public void setEscduracionreserva(Integer escduracionreserva) {
+        this.escduracionreserva = escduracionreserva;
+    }
+
     public Espacioescenarios getEspid() {
         return espid;
     }
 
     public void setEspid(Espacioescenarios espid) {
         this.espid = espid;
+    }
+
+    public Tipoescenario getEsctipoescid() {
+        return esctipoescid;
+    }
+
+    public void setEsctipoescid(Tipoescenario esctipoescid) {
+        this.esctipoescid = esctipoescid;
+    }
+
+    public Estadoescenario getEscestescid() {
+        return escestescid;
+    }
+
+    public void setEscestescid(Estadoescenario escestescid) {
+        this.escestescid = escestescid;
+    }
+
+    @XmlTransient
+    public List<Reserva> getReservaList() {
+        return reservaList;
+    }
+
+    public void setReservaList(List<Reserva> reservaList) {
+        this.reservaList = reservaList;
+    }
+
+    @XmlTransient
+    public List<Sedictanclases> getSedictanclasesList() {
+        return sedictanclasesList;
+    }
+
+    public void setSedictanclasesList(List<Sedictanclases> sedictanclasesList) {
+        this.sedictanclasesList = sedictanclasesList;
     }
 
     @Override
@@ -283,48 +338,8 @@ public class Escenario implements Serializable {
 
     @Override
     public String toString() {
-        return "com.unicauca.gestorrecursosdeportivos.entities.Escenario[ escid=" + escid + " ]";
+        return "com.unicauca.prueba.entities.Escenario[ escid=" + escid + " ]";
     }
-
-    @XmlTransient
-    public List<Reserva> getReservaList() {
-        return reservaList;
-    }
-
-    public void setReservaList(List<Reserva> reservaList) {
-        this.reservaList = reservaList;
-    }
-
-    public Integer getEscduracionreserva() {
-        return escduracionreserva;
-    }
-
-    public void setEscduracionreserva(Integer escduracionreserva) {
-        this.escduracionreserva = escduracionreserva;
-    }
-
-    public Tipoescenario getEsctipoescid() {
-        return esctipoescid;
-    }
-
-    public void setEsctipoescid(Tipoescenario esctipoescid) {
-        this.esctipoescid = esctipoescid;
-    }
-
-    public Integer getEscvecesreservadia() {
-        return escvecesreservadia;
-    }
-
-    public void setEscvecesreservadia(Integer escvecesreservadia) {
-        this.escvecesreservadia = escvecesreservadia;
-    }
-
-    public Estadoescenario getEscestescid() {
-        return escestescid;
-    }
-
-    public void setEscestescid(Estadoescenario escestescid) {
-        this.escestescid = escestescid;
-    }
+    
     
 }
