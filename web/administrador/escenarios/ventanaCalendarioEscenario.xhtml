@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"      
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+        <script type="text/javascript">
+                    PrimeFaces.locales['es'] = {
+                        closeText: 'Cerrar',
+                        prevText: 'Anterior',
+                        nextText: 'Siguiente',
+                        monthNames: ['Enero','Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+                        monthNamesShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun','Jul','Ago','Sep','Oct','Nov','Dic'],
+                        dayNames: ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'],
+                        dayNamesShort: ['Dom','Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab'],
+                        dayNamesMin: ['D','L','M','X','J','V','S'],
+                        weekHeader: 'Semana',
+                        firstDay: 1,
+                        isRTL: false,
+                        showMonthAfterYear: false,
+                        yearSuffix: '',
+                        timeOnlyTitle: 'Sólo hora',
+                        timeText: 'Tiempo',
+                        hourText: 'Hora',
+                        minuteText: 'Minuto',
+                        secondText: 'Segundo',
+                        currentText: 'Fecha actual',
+                        ampm: false,
+                        month: 'Mes',
+                        week: 'Semana',
+                        day: 'Día',
+                        allDayText: 'Todo el día'
+                    };
+                </script>
+        <p:dialog position="top" resizable="false"  width="1000" height="500"   header="Información Escenario" showEffect="scale" modal="true"  widgetVar="ventanaCalendarioEscenario">
+            <h:form id="formMensajesReservas">
+                <p:growl/>
+            </h:form>
+            <h:form id="formInformacionEscenario">
+                <div style="float: left;">
+                    <p:graphicImage width="200" height="200" library="img/fotosEscenarios/" name="#{mostrarCalendarioEscenarioController.escenarioSeleccionado.escnombreimagenreal}"/>
+                </div>
+                <div style="float: left;">                     
+                    <p:panelGrid style="margin-left: 20px;" styleClass="panelgrid"  >                     
+                        <p:row>
+                            <p:column>
+                                <p:outputLabel value="Nombre: "/>
+                            </p:column>
+                            <p:column>
+                                <p:outputLabel value="#{mostrarCalendarioEscenarioController.escenarioSeleccionado.escnombre}"/>
+                            </p:column>
+                        </p:row>
+                        <p:row> 
+                            <p:column>
+                                <p:outputLabel value="Medidas: "/>
+                            </p:column>
+                            <p:column>
+                                <p:outputLabel value="#{mostrarCalendarioEscenarioController.escenarioSeleccionado.escmedidas}"/>
+                            </p:column>
+                        </p:row>
+                        <p:row> 
+                            <p:column>
+                                <p:outputLabel value="Descripción: "/>
+                            </p:column>
+                            <p:column>
+                                <pre>#{mostrarCalendarioEscenarioController.escenarioSeleccionado.escdescripcion}</pre>
+                            </p:column>
+                        </p:row>
+                        <p:row> 
+                            <p:column>
+                                <p:outputLabel value="Recomendaciones: "/>
+                            </p:column>
+                            <p:column>
+                                <pre>#{mostrarCalendarioEscenarioController.escenarioSeleccionado.escrecomendaciones}</pre>
+                            </p:column>
+                        </p:row>
+                    </p:panelGrid>
+                </div>
+                <div class="clear"></div>
+            </h:form>
+            <h:form id="formCalendarioEscenario">
+                <div style="border: 1px solid;width: 950px;height: 700px;">
+                    
+                    <p:commandButton style="position: absolute; margin-left: 10px;width: 30px;height: 30px;border-radius: 15px;
+                                     background: #22419A;" icon="iconoBtnAtras" actionListener="#{mostrarCalendarioEscenarioController.anteriorSemana()}"/>
+                    <p:commandButton style="position: absolute; margin-left: 45px;width: 30px;height: 30px;border-radius: 15px;
+                                     background: #22419A;" icon="iconoBtnSiguiente" actionListener="#{mostrarCalendarioEscenarioController.siguienteSemana()}"/>
+                    <p:commandButton style="position: absolute; margin-left: 85px;background: #22419A; color: white;height: 30px;"
+                                     value="Fecha actual"  disabled="#{mostrarCalendarioEscenarioController.desHabilitarBotonFechaActual}"
+                                     actionListener="#{mostrarCalendarioEscenarioController.semanaActual()}"/>
+                    <p:schedule timeZone="GMT-5" ignoreTimezone="false" styleClass="schedulemio" locale="es" slotMinutes="#{mostrarCalendarioEscenarioController.rangoMinutos}"  
+                                allDaySlot="false" minTime="#{mostrarCalendarioEscenarioController.horariohorainicio}" maxTime="#{mostrarCalendarioEscenarioController.horariohorafin}"  
+                                view="agendaWeek" rightHeaderTemplate=""
+                                leftHeaderTemplate=""
+                                initialDate="#{mostrarCalendarioEscenarioController.initialDate}"
+                                columnFormat="month:'ddd', week:'dddd', day:'dd/MM/yyyy'}, titleFormat: {day: 'dddd, dd \'de\' MMMM \'de\' yyyy'"
+                                 >
+                        
+                    </p:schedule>
+                </div>
+            </h:form>
+        </p:dialog> 
+        
+    </ui:composition>
+    
+ </html>
+

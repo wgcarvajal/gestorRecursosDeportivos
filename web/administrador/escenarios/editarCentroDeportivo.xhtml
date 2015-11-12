@@ -11,7 +11,7 @@
         <ui:composition template="./../../plantillas/frontEndAdministrador.xhtml">
 
             <ui:define name="titulo">
-                Gestión Centro Deportivo
+                Editar Centro Deportivo
             </ui:define>            
 
             <ui:define name="title">
@@ -49,16 +49,16 @@
                 <h:form>
                     <p:breadCrumb>
                         <p:menuitem value="Inicio" outcome="/index"/>                              
-                        <p:menuitem value="Gestón Centros Deportivos" outcome="gestionCentrosDeportivos" />
-                        <p:menuitem value="Gestón Centro Deportivo" outcome="gestionCentroDeportivo" />
+                        <p:menuitem value="Editar Centros Deportivos" outcome="editarCentrosDeportivos" />
+                        <p:menuitem value="Editar Centro Deportivo" outcome="editarCentroDeportivo" />
                     </p:breadCrumb>
                 </h:form> 
                 <p:growl autoUpdate="true"/>
-                <div class="tituloContenido">Gestión Centro Deportivo</div>
+                <div class="tituloContenido">Editar Centro Deportivo</div>
                 <h:form>
                     <p:commandButton value="Regresar" 
                                      style="background: #22419A;color:#FFFFFF;font-style: italic;font-weight: normal;"
-                                     action="gestionCentrosDeportivos?faces-redirect=true"/>
+                                     action="editarCentrosDeportivos?faces-redirect=true"/>
                     <p:commandButton rendered="#{mostrarEscenariosController.habilitarBotonCrearEscenario}" value="Nuevo Escenario" 
                                      style="margin-left:720px;background: #22419A;color:#FFFFFF;font-style: italic;font-weight: normal;"
                                      action="#{crearEscenarioController.abriVentanaNuevoEscenario(estadoSeleccionController.idEspacioEscenarioSeleccionado)}"/>

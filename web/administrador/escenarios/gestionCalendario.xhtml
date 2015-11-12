@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <body>
+
+        <ui:composition template="./../../plantillas/frontEndAdministrador.xhtml">
+
+            <ui:define name="titulo">
+                Gestión Calendario
+            </ui:define>          
+
+
+            <ui:define name="title">
+                
+            </ui:define>
+
+            <ui:define name="body">
+                <h:form>
+                    <p:breadCrumb>
+                        <p:menuitem value="Inicio"/>                              
+                        <p:menuitem value="Gestión Calendario" outcome="gestionCalendario" />                                        
+                    </p:breadCrumb>
+                </h:form>
+                <div class="tituloContenido">Gestión Calendario</div>
+                
+                <h:form id="formularioEspaciosEscenarios">                   
+                    <p:dataTable value="#{listarEspaciosEscenariosController.listaEspacioEscenarios}" var="espacioEscenarios">
+                        
+                            <p:column headerText="Nombre">
+                                #{espacioEscenarios.espnombre}
+                            </p:column>
+                            <p:column headerText="Acciones">
+                                <p:commandLink value="ver" action="#{estadoSeleccionController.seleccionarEspacioEscenariosGestionCalendario(espacioEscenarios.espid)}"/>
+
+                            </p:column>
+                        
+                    </p:dataTable>
+                </h:form>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

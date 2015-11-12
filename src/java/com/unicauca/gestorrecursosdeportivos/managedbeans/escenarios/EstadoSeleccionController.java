@@ -5,9 +5,9 @@
  */
 package com.unicauca.gestorrecursosdeportivos.managedbeans.escenarios;
 
-import com.unicauca.gestorrecursosdeportivos.entities.Espacioescenarios;
+
 import java.io.Serializable;
-import java.util.List;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
@@ -53,12 +53,17 @@ public class EstadoSeleccionController implements Serializable {
     public String seleccionarEspacioEscenarios(Integer idEspacioEscenarioSeleccionado)
     {
         this.idEspacioEscenarioSeleccionado = idEspacioEscenarioSeleccionado;
-        return "gestionCentroDeportivo?faces-redirect=true";
+        return "editarCentroDeportivo?faces-redirect=true";
+    }
+    public String seleccionarEspacioEscenariosGestionCalendario(Integer idEspacioEscenarioSeleccionado)
+    {
+        this.idEspacioEscenarioSeleccionado = idEspacioEscenarioSeleccionado;
+        return "gestionCalendarioCentroDeportivo?faces-redirect=true";
     }
     public String seleccionarEscenario(Integer idEscenarioSeleccionado)
     {
         this.idEscenarioSeleccionado = idEscenarioSeleccionado;
-        return "gestionEscenario?faces-redirect=true";
+        return "editarEscenario?faces-redirect=true";
     }
     public String seleccionarEspacioEscenariosRevervasOinformacion(Integer idEspacioEscenarioSeleccionado)
     {        

@@ -70,7 +70,7 @@ public class UsuarioSessionController implements Serializable
                 }
                 else
                 {
-                    FacesContext.getCurrentInstance().getExternalContext().redirect("/GestorRecursosDeportivos/faces/administrador/escenarios/gestionCentrosDeportivos.xhtml");
+                    FacesContext.getCurrentInstance().getExternalContext().redirect("/GestorRecursosDeportivos/faces/administrador/escenarios/editarCentrosDeportivos.xhtml");
                 }
             } 
             catch (ServletException e) 
