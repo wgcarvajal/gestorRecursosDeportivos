@@ -16,6 +16,7 @@ public class ValidarAtributosEscenario implements Serializable
     public ValidarAtributosEscenario()
     {
         
+        
     }
     
     public boolean validarNombreEscenario(String nombre,EscenarioFacade escenariosEJB)

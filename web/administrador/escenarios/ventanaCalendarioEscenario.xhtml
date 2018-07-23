@@ -76,13 +76,14 @@
                                 <pre>#{mostrarCalendarioEscenarioController.escenarioSeleccionado.escrecomendaciones}</pre>
                             </p:column>
                         </p:row>
-                    </p:panelGrid>
+                    </p:panelGrid>                    
                 </div>
                 <div class="clear"></div>
             </h:form>
             <h:form id="formCalendarioEscenario">
+                
                 <div style="border: 1px solid;width: 950px;height: 700px;">
-                    
+                   
                     <p:commandButton style="position: absolute; margin-left: 10px;width: 30px;height: 30px;border-radius: 15px;
                                      background: #22419A;" icon="iconoBtnAtras" actionListener="#{mostrarCalendarioEscenarioController.anteriorSemana()}"/>
                     <p:commandButton style="position: absolute; margin-left: 45px;width: 30px;height: 30px;border-radius: 15px;
@@ -90,6 +91,7 @@
                     <p:commandButton style="position: absolute; margin-left: 85px;background: #22419A; color: white;height: 30px;"
                                      value="Fecha actual"  disabled="#{mostrarCalendarioEscenarioController.desHabilitarBotonFechaActual}"
                                      actionListener="#{mostrarCalendarioEscenarioController.semanaActual()}"/>
+                    <p:commandButton value="Agregar clases" style="background: #22419A; color: white;position: absolute;margin-left: 820px;" actionListener="#{clasesController.agregarClases()}"/>
                     <p:schedule timeZone="GMT-5" ignoreTimezone="false" styleClass="schedulemio" locale="es" slotMinutes="#{mostrarCalendarioEscenarioController.rangoMinutos}"  
                                 allDaySlot="false" minTime="#{mostrarCalendarioEscenarioController.horariohorainicio}" maxTime="#{mostrarCalendarioEscenarioController.horariohorafin}"  
                                 view="agendaWeek" rightHeaderTemplate=""

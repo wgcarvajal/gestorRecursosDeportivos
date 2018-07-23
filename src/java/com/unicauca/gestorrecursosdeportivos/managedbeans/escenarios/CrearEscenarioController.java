@@ -49,7 +49,7 @@ public class CrearEscenarioController implements Serializable
         String OS = System.getProperty("os.name").toLowerCase();
         ServletContext servletContext = (ServletContext) FacesContext.getCurrentInstance().getExternalContext().getContext();
         String realPath = (String) servletContext.getRealPath("/"); 
-        if(OS.contains("nux"))
+        if(OS.contains("nux") || OS.contains("mac"))
         {
            this.rutaImagenEscenario=realPath.replace("build/", "")+"resources/img/escenarios/";           
         }
